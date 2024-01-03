@@ -3,41 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Nova+Square&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>New York</h1>
-        <p>
-          Tuesday 16:04, few clouds
-          <br />
-          87%, Wind: 8.23km/h
-        </p>
-      </div>
-      <div>🌦️ 12°C</div>
-    </main>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/Smj0hnson614" target="_blank">
-        Sabrina Johnson,
-      </a>
-      is open-sourced on
-      <a
-        href="https://github.com/Smj0hnson614/Vanilla-weather-app"
-        target="_blank"
-        >GitHub</a
-      >
-      and hosted on
-      <a href="https://vanilla-weather-app1.netlify.app" target="_blank"
-        >Netlify</a
-      >
-    </footer>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input type="search" placeholder="Enter a city..." required />
+          <input type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1>New York</h1>
+          <p>
+            Tuesday 16:04, few clouds
+            <br />
+            87%, Wind: 8.23km/h
+          </p>
+        </div>
+        <div>🌦️ 12°C</div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/Smj0hnson614" target="_blank">
+          Sabrina Johnson,
+        </a>
+        is open-sourced on
+        <a
+          href="https://github.com/Smj0hnson614/Vanilla-weather-app"
+          target="_blank"
+          >GitHub</a
+        >
+        and hosted on
+        <a href="https://vanilla-weather-app1.netlify.app" target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
