@@ -16,6 +16,8 @@ function updateWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed} mi/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -57,7 +59,16 @@ function search(event) {
   searchCity(searchInput.value);
 }
 
-function dispalyForecast() {
+function getForecast(city) {
+  let apiKey = "360btabo4f1196741527047834a50bb8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(dispalyForecast);
+  console.log(apiUrl);
+}
+
+function dispalyForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -87,4 +98,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", search);
 
 searchCity("Miami");
-dispalyForecast();
