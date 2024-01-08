@@ -57,7 +57,34 @@ function search(event) {
   searchCity(searchInput.value);
 }
 
+function dispalyForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
+                <div class="weather-forecast-day"></div>
+                  <div class="weather-forecast-date">${day}
+                  </div>
+                  <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+                  alt=""
+                  width="42" />
+                  <div class="weather-forecast-temperatures"></div>
+                  <span class="weather-forecast-temperatures-max">20°</span>
+                  <span class="weather-forecast-temperatures-min">12°</span></div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", search);
 
 searchCity("Miami");
+dispalyForecast();
